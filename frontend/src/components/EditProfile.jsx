@@ -52,7 +52,7 @@ export default function EditProfile() {
 
     try {
       setLoading(true);
-      const res = await axios.post("http://localhost:8000/api/v1/user/profile/edit",formData,{
+      const res = await axios.post("https://connect-to.onrender.com/api/v1/user/profile/edit",formData,{
         headers:{
             "Content-Type":'multipart/form-data',
         },

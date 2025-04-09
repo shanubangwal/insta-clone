@@ -39,7 +39,7 @@ export default function Post({ post }) {
       const action = liked ? "dislike" : "like";
 
       const res = await axios.get(
-        `http://localhost:8000/api/v1/post/${post._id}/${action}`,
+        `https://connect-to.onrender.com/api/v1/post/${post._id}/${action}`,
         { withCredentials: true }
       );
       if (res.data.success) {
@@ -70,7 +70,7 @@ export default function Post({ post }) {
   const commentHandler = async () => {
     try {
       const res = await axios.post(
-        `http://localhost:8000/api/v1/post/${post._id}/comment`,
+        `https://connect-to.onrender.com/api/v1/post/${post._id}/comment`,
         { text },
         {
           headers: {
@@ -108,7 +108,7 @@ export default function Post({ post }) {
   const deletPostHandler = async () => {
     try {
       const res = await axios.delete(
-        `http://localhost:8000/api/v1/post/delete/${post?._id}`,
+        `https://connect-to.onrender.com/api/v1/post/delete/${post?._id}`,
         { withCredentials: true }
       );
       if (res.data.success) {
@@ -127,7 +127,7 @@ export default function Post({ post }) {
   const bookmarkhandler = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8000/api/v1/post/${post?._id}/bookmark`,
+        `https://connect-to.onrender.com/api/v1/post/${post?._id}/bookmark`,
         { withCredentials: true }
       );
       if (res.data.success) {
